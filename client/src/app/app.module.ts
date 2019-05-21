@@ -6,6 +6,12 @@ import { NavigationComponent } from './partials/navigation/navigation.component'
 import { HeaderComponent } from './partials/header/header.component';
 import { FooterComponent } from './partials/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PostComponent } from './pages/post/post.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { AboutComponent } from './pages/about/about.component';
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 @NgModule({
   declarations: [
@@ -13,10 +19,14 @@ import { HomeComponent } from './pages/home/home.component';
     NavigationComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    PostComponent,
+    ContactComponent,
+    AboutComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
