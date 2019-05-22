@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {TitleService} from '../../title.service';
-import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +7,12 @@ import {Subscription} from 'rxjs';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  title: Subscription;
-  tekst: string;
+  title: string;
+  url: string;
+
   constructor(private msg: TitleService) {
-    this.title = this.msg.title$.subscribe(title => this.tekst = title);
-    console.log(this.title);
+    this.msg.title$.subscribe(title => this.title = title);
+    this.msg.url$.subscribe(url => this.url = url);
   }
   ngOnInit() {
   }

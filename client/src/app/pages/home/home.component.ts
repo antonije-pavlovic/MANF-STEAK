@@ -8,8 +8,10 @@ import {TitleService} from '../../title.service';
 })
 export class HomeComponent implements OnInit {
   title = 'Home';
+  url = '../assets/img/home-bg.jpg';
   constructor(private msg: TitleService) {
     msg.changeTitle(this.title);
+    msg.changeUrl(this.url);
   }
 
   ngOnInit() {

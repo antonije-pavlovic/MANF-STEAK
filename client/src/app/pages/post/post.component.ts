@@ -8,8 +8,11 @@ import {TitleService} from '../../title.service';
 })
 export class PostComponent implements OnInit {
   title = 'Sample Post';
+  url = '../assets/img/post-bg.jpg';
   constructor(private msg: TitleService) {
     msg.changeTitle(this.title);
+    msg.changeUrl(this.url);
+    msg.changeUrl(this.url);
   }
 
   ngOnInit() {
