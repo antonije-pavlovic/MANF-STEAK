@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TitleService} from '../../title.service';
 
 @Component({
   selector: 'app-contact',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
-  constructor() { }
+  title = 'Contact';
+  constructor(private msg: TitleService) {
+    msg.changeTitle(this.title);
+  }
 
   ngOnInit() {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TitleService} from '../../title.service';
 
 @Component({
   selector: 'app-post',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-
-  constructor() { }
+  title = 'Sample Post';
+  constructor(private msg: TitleService) {
+    msg.changeTitle(this.title);
+  }
 
   ngOnInit() {
   }

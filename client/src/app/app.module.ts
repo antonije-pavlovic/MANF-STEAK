@@ -10,6 +10,7 @@ import { PostComponent } from './pages/post/post.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AboutComponent } from './pages/about/about.component';
 import { AppRoutingModule } from './app-routing.module';
+import {TitleService} from './title.service';
 
 
 
@@ -28,7 +29,9 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    TitleService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

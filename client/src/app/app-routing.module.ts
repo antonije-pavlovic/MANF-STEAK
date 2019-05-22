@@ -6,7 +6,7 @@ import { PostComponent } from './pages/post/post.component';
 import  { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
-  { path: 'about' , component: AboutComponent },
+  { path: 'about' , component: AboutComponent ,  data: {title: 'About'} },
   { path: 'contact' , component: ContactComponent },
   { path: 'post' , component: PostComponent },
   { path: 'home' , component: HomeComponent },
