@@ -11,6 +11,7 @@ fastify.get('/',async (request, reply) => {
     return { hello: 'world'}
 });
 
+console.log(routes)
 routes.forEach((route, index) => {
     fastify.route(route)
 });
