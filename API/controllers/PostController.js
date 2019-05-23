@@ -23,6 +23,7 @@ exports.getSinlePost = async (req,res) => {
 
 exports.addPost = async (req,res) => {
     try {
+        console.log(req.body)
         let post = new Post(req.body);
         return post.save();
     }catch (e) {

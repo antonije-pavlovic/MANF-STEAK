@@ -1,5 +1,6 @@
 const routes = require('./routes/routes');
 const mongoose = require('mongoose');
+
 mongoose.connect('mongodb://localhost/blog',{useNewUrlParser: true })
     .then(() => console.log('connected to datanase'))
     .catch(err => console.error(err));
@@ -7,18 +8,17 @@ mongoose.connect('mongodb://localhost/blog',{useNewUrlParser: true })
 const fastify = require('fastify')({
     logger:true
 });
+
 fastify.get('/',async (request, reply) => {
     return { hello: 'world'}
 });
 
-console.log(routes)
 routes.forEach((route, index) => {
     fastify.route(route)
 });
 
-
 const  start = () => {
-    try{
+    try {
         fastify.listen(3000);
         fastify.log.info('listening on port 3000')
     }catch (e) {
