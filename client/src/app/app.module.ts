@@ -12,6 +12,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { AppRoutingModule } from './app-routing.module';
 import {TitleService} from './title.service';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 
@@ -29,7 +30,8 @@ import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SlimLoadingBarModule
+    SlimLoadingBarModule,
+    ReactiveFormsModule
   ],
   providers: [
     TitleService
