@@ -2,7 +2,7 @@
 <app-navigation></app-navigation>
 <app-header></app-header>
 
-<main [@routerTransition]="getState(o)" style="min-height: 700px">
+<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" style="min-height: 700px">
   <router-outlet #o="outlet"></router-outlet>
 </main>
 

@@ -7,11 +7,11 @@ import { ContactComponent } from './pages/contact/contact.component';
 import {CreateComponent} from './pages/create/create.component';
 
 const routes: Routes = [
-  { path: 'about' , component: AboutComponent ,  data: {state: 'About'}},
-  { path: 'contact' , component: ContactComponent , data: {state: 'Contact'}},
-  { path: 'post' , component: PostComponent ,  data: {state: 'Post'}},
-  { path: 'home' , component: HomeComponent, data: {state: 'Home'} },
-  { path: 'create' , component: CreateComponent , data: {state : 'Create'}},
+  { path: 'about' , component: AboutComponent },
+  { path: 'contact' , component: ContactComponent },
+  { path: 'post' , component: PostComponent },
+  { path: 'home' , component: HomeComponent },
+  { path: 'create' , component: CreateComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
