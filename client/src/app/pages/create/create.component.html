@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      <p>Some useful links for tips to write an awesome blog post </p>
+      <h4>Some useful links for tips to write an awesome blog post </h4>
                                                    <!-- Prebaci ovu listu u nesto drugo -->
       <div class="list-group" >
         <a href="https://www.wordstream.com/blog/ws/2015/02/09/how-to-write-a-blog-post" class="list-group-item" target="_blank">
@@ -11,30 +11,40 @@
           Best Practices for Writing <span class="badge badge-default pull-right"> -  Medium </span>
         </a>
         <a href="https://hackernoon.com/how-to-contribute-a-story-to-hacker-noon-1536c2587063" class="list-group-item" target="_blank">
-          How to Contribute a Story <span class="badge badge-default pull-right"> -  Hackernoon</span>
+          How to Contribute a Story <span class="badge badge-default pull-right"> -  Hackernoon </span>
         </a>
       </div>
-      <form>
+
+      <form [formGroup]="createPost"   (ngSubmit)="onSubmit()">
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
-            <label>Name</label>
-            <input type="text" class="form-control" placeholder="Title" >
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="Title"  formControlName="title" >
           </div>
+          <span *ngIf="(f.title.dirty || f.title.touched) && f.title.invalid && f.title.errors.required">
+              <p class="help-block text-danger">  Title is required.</p>
+          </span>
         </div>
 
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>Subtitle</label>
-            <input type="email" class="form-control" placeholder="Subtitle">
+            <input type="text" class="form-control" placeholder="Subtitle"  formControlName="subtitle">
           </div>
+          <span *ngIf="(f.subtitle.dirty || f.subtitle.touched) && f.subtitle.invalid && f.subtitle.errors.required">
+              <p class="help-block text-danger">  Subtitle is required.</p>
+          </span>
         </div>
 
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>Text</label>
-            <textarea rows="5" class="form-control" placeholder="Text" ></textarea>
+            <textarea rows="5" class="form-control" placeholder="Text"  formControlName="text"></textarea>
             <p class="help-block text-danger"></p>
           </div>
+          <span *ngIf="(f.text.dirty || f.text.touched) && f.text.invalid && f.text.errors.required">
+              <p class="help-block text-danger">  Text is required.</p>
+          </span>
         </div>
 
         <div class="control-group">
@@ -45,8 +55,8 @@
         </div>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary" > Send </button> <span> or </span>
-          <button type="reset" class="btn btn-primary" > Revert </button>
+          <button type="submit"  [disabled]="!createPost.valid" class="btn btn-primary" > Send </button> <span> or </span>
+          <button type="reset" (click)="revert()" class="btn btn-primary" > Revert </button>
         </div>
 
       </form>
