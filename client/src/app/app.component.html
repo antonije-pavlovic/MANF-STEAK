@@ -2,7 +2,10 @@
 <app-navigation></app-navigation>
 <app-header></app-header>
 
-<router-outlet></router-outlet>
+<main [@routerTransition]="getState(o)" style="min-height: 700px">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
+
 <hr>
 
 <app-footer></app-footer>

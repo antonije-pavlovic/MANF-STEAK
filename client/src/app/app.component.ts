@@ -6,11 +6,13 @@ import { NavigationCancel,
   NavigationError,
   NavigationStart,
   Router } from '@angular/router';
+import {routerTransition} from './animationas';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [ routerTransition ],
 })
 export class AppComponent {
   constructor(private loadingBar: SlimLoadingBarService, private router: Router) {
@@ -31,5 +33,8 @@ export class AppComponent {
     if (event instanceof NavigationError) {
       this.loadingBar.stop();
     }
+  }
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
   }
 }
