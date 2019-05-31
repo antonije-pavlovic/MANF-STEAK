@@ -9,10 +9,12 @@ import {TitleService} from '../../title.service';
 export class HeaderComponent implements OnInit {
   title: string;
   url: string;
+  subtitle: string;
 
   constructor(private msg: TitleService) {
     this.msg.title$.subscribe(title => this.title = title);
     this.msg.url$.subscribe(url => this.url = url);
+    this.msg.subtitle$.subscribe(subtitle => this.subtitle = subtitle);
   }
   ngOnInit() {
   }

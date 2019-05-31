@@ -11,9 +11,11 @@ export class ContactComponent implements OnInit {
   angForm: FormGroup;
   title = 'Contact';
   url = '../assets/img/contact-bg.jpg';
+  subtitle = '';
   constructor(private msg: TitleService, private fb: FormBuilder) {
     msg.changeTitle(this.title);
     msg.changeUrl(this.url);
+    msg.changeSubtitle(this.subtitle);
     this.createForm();
   }
   createForm() {

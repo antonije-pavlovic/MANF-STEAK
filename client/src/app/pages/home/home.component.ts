@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {TitleService} from '../../title.service';
+import { TitleService } from '../../title.service';
 import { PostServiceService } from '../../services/post/post-service.service';
-import {Post} from '../../post';
+import { Post } from '../../post';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +11,12 @@ import {Post} from '../../post';
 export class HomeComponent implements OnInit {
   title = 'Home';
   url = '../assets/img/home-bg.jpg';
+  subtitle = '';
   posts: Post[];
   constructor(private msg: TitleService, private service: PostServiceService) {
     msg.changeTitle(this.title);
     msg.changeUrl(this.url);
+    msg.changeSubtitle(this.subtitle);
   }
 
   ngOnInit() {
@@ -24,7 +26,6 @@ export class HomeComponent implements OnInit {
   getPosts(): void {
     this.service.getPosts()
       .subscribe(data => {
-        console.log(data + 'fdsfsgfg');
         this.posts = data;
       });
 

@@ -9,9 +9,11 @@ import { TitleService } from '../../title.service';
 export class AboutComponent implements OnInit {
   title = 'About';
   url = '../assets/img/about-bg.jpg';
+  subtitle = '';
   constructor(private msg: TitleService) {
     msg.changeTitle(this.title);
     msg.changeUrl(this.url);
+    msg.changeSubtitle(this.subtitle);
   }
 
   ngOnInit() {

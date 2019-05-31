@@ -19,9 +19,9 @@
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>Title</label>
-            <input type="text" class="form-control" placeholder="Title"  formControlName="title" >
+            <input type="text" class="form-control" placeholder="Title"  formControlName="Title" >
           </div>
-          <span *ngIf="(f.title.dirty || f.title.touched) && f.title.invalid && f.title.errors.required">
+          <span *ngIf="(f.Title.dirty || f.Title.touched) && f.Title.invalid && f.Title.errors.required">
               <p class="help-block text-danger">  Title is required.</p>
           </span>
         </div>
@@ -29,9 +29,9 @@
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>Subtitle</label>
-            <input type="text" class="form-control" placeholder="Subtitle"  formControlName="subtitle">
+            <input type="text" class="form-control" placeholder="Subtitle"  formControlName="Subtitle">
           </div>
-          <span *ngIf="(f.subtitle.dirty || f.subtitle.touched) && f.subtitle.invalid && f.subtitle.errors.required">
+          <span *ngIf="(f.Subtitle.dirty || f.Subtitle.touched) && f.Subtitle.invalid && f.Subtitle.errors.required">
               <p class="help-block text-danger">  Subtitle is required.</p>
           </span>
         </div>
@@ -39,19 +39,12 @@
         <div class="control-group">
           <div class="form-group floating-label-form-group controls">
             <label>Text</label>
-            <textarea rows="5" class="form-control" placeholder="Text"  formControlName="text"></textarea>
+            <textarea rows="5" class="form-control" placeholder="Text"  formControlName="Text"></textarea>
             <p class="help-block text-danger"></p>
           </div>
-          <span *ngIf="(f.text.dirty || f.text.touched) && f.text.invalid && f.text.errors.required">
+          <span *ngIf="(f.Text.dirty || f.Text.touched) && f.Text.invalid && f.Text.errors.required">
               <p class="help-block text-danger">  Text is required.</p>
           </span>
-        </div>
-
-        <div class="control-group">
-          <div class="form-group floating-label-form-group controls">
-            <label>Picture</label>
-            <input type="file" class="form-control" placeholder="Picture" >
-          </div>
         </div>
 
         <div class="form-group">

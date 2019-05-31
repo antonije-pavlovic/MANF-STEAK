@@ -10,11 +10,9 @@ import {Post} from '../../post';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  title = 'Sample Post';
   url = '../assets/img/post-bg.jpg';
   post: Post;
   constructor(private msg: TitleService, private route: ActivatedRoute, private service: PostServiceService) {
-    msg.changeUrl(this.url);
     msg.changeUrl(this.url);
   }
 
@@ -27,6 +25,7 @@ export class PostComponent implements OnInit {
       .subscribe(data => {
         this.post = data;
         this.msg.changeTitle(this.post.Title);
+        this.msg.changeSubtitle(this.post.Subtitle);
       });
   }
 
