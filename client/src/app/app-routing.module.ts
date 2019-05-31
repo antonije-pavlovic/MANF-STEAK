@@ -9,7 +9,7 @@ import {CreateComponent} from './pages/create/create.component';
 const routes: Routes = [
   { path: 'about' , component: AboutComponent },
   { path: 'contact' , component: ContactComponent },
-  { path: 'post' , component: PostComponent },
+  { path: 'post/:id' , component: PostComponent },
   { path: 'home' , component: HomeComponent },
   { path: 'create' , component: CreateComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }

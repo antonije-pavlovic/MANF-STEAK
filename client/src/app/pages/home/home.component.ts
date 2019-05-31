@@ -20,9 +20,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getPosts();
   }
+
   getPosts(): void {
     this.service.getPosts()
-      .subscribe(data => this.posts = data)
-      .unsubscribe();
+      .subscribe(data => {
+        console.log(data + 'fdsfsgfg');
+        this.posts = data;
+      });
+
   }
 }

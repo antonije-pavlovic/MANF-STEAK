@@ -1,9 +1,7 @@
 const Post = require('../models/Post');
 const boom = require('boom');
-
 exports.getPosts = async (req, res) => {
     try {
-        console.log('doso');
         let posts = await Post.find();
         return posts;
     }catch (e) {
@@ -24,7 +22,9 @@ exports.getSinlePost = async (req,res) => {
 exports.addPost = async (req,res) => {
     try {
         console.log(req.body)
+        req.body.DateTime = new Date();
         let post = new Post(req.body);
+
         return post.save();
     }catch (e) {
         throw boom.boomify(e);

@@ -1,6 +1,8 @@
 export class Post {
   id: string;
-  title: string;
-  subtitle: string;
-  text: string;
+  Title: string;
+  Subtitle: string;
+  Text: string;
+  Picture: string;
+  User_id: number;
 }
