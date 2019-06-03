@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TitleService} from '../../title.service';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {PostServiceService} from '../../services/post/post-service.service';
 import {Post} from '../../post';
 
@@ -12,7 +12,7 @@ import {Post} from '../../post';
 export class PostComponent implements OnInit {
   url = '../assets/img/post-bg.jpg';
   post: Post;
-  constructor(private msg: TitleService, private route: ActivatedRoute, private service: PostServiceService) {
+  constructor(private msg: TitleService, private route: ActivatedRoute, private service: PostServiceService, private router: Router) {
     msg.changeUrl(this.url);
   }
 
@@ -26,6 +26,14 @@ export class PostComponent implements OnInit {
         this.post = data;
         this.msg.changeTitle(this.post.Title);
         this.msg.changeSubtitle(this.post.Subtitle);
+      });
+  }
+  delete(id: string): void {
+    console.log(id);
+    this.service.deletePost(id)
+      .subscribe(() => {
+        this.router.navigateByUrl('/home');
+        console.log('ode post');
       });
   }
 

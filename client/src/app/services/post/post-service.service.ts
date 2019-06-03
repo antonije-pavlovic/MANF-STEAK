@@ -36,6 +36,13 @@ export class PostServiceService {
         catchError(this.handleError<Post>('addPost'))
     );
   }
+  deletePost(id: string): Observable<string> {
+    return this.http.delete<string>('/api/posts/' + id)
+      .pipe(
+       tap(_ => this.log(`post is deleted`)),
+       catchError(this.handleError<string>('deletePost'))
+    );
+  }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
