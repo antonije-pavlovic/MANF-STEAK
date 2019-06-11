@@ -1,1 +1,1 @@
-# MANF-STAcK
+# MANF-STACK
